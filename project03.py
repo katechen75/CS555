@@ -2,8 +2,6 @@
 
 # Code for Project 03
 
-# To run from terminal window: python3 project03.py <gedcom file>
-
 import sys
 import re
 import datetime
