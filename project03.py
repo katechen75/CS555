@@ -2,26 +2,21 @@
 
 # Code for Project 03
 
-# To run from terminal window:   python3 project03.py <gedcom file>
+# To run from terminal window: python3 project03.py <gedcom file>
 
 import sys
 import re
 import datetime
 from prettytable import PrettyTable
 
-file_name = sys.argv[1]
-
 tags = ["INDI", "NAME", "SEX", "BIRT", "DEAT",  "FAMC", "FAMS", "FAM", "MARR", "HUSB", "WIFE", "CHIL", "DIV", "DATE", "HEAD", "TRLR", "NOTE"]
 
 month_to_num = {"JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6, "JUL": 7, 
 				"AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12}
 
-def get_info:
+def get_info(file_name):
 	# error checking
-	if len(sys.argv) != 2:
-		print("Command to run: python3 project03.py <filename>")
-
-	elif(file_name.split(".")[1] != "ged"):
+	if(file_name.split(".")[1] != "ged"):
 		print("Must supply GEDCOM file.")
 	else:
 		# parse file for individuals and families
