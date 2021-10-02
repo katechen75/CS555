@@ -81,7 +81,7 @@ def get_info(file_name):
 				if birthday != None:
 					age = d - birthday
 				alive = False
-				death = b
+				death = d
 			else:
 				if birthday != None:
 					age = datetime.datetime.now().year - birthday.year
@@ -143,4 +143,3 @@ def get_info(file_name):
 		print(families_print)
 
 		return {"individuals": individuals_table, "families": family_table}
-
