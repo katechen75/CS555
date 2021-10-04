@@ -24,5 +24,5 @@ for family in info['families']:
                 hbirth = individual['birthday']
 
         if hbirth != None and wbirth != None:
-            if hbirth > m and wbirth > m:
+            if (hbirth > m) or (wbirth > m):
                 print("ERROR: FAMILY: US02: " + family['id'] + ": Marriage " + m.strftime("%m-%d-%Y") + " occurs before birthdays of both spouses")
