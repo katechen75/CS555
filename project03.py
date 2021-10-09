@@ -134,14 +134,14 @@ def print_tables(file_name):
 	info = get_info(file_name)
 	print("Individuals")
 	individuals_print = PrettyTable()
-	individuals_print.field_names = list(individuals_table[0].keys())
-	for ind in individuals_table:
+	individuals_print.field_names = list(info['individuals'][0].keys())
+	for ind in info['individuals']:
 		individuals_print.add_row(list(ind.values()))
 	print(individuals_print)
 
 	print("Families")
 	families_print = PrettyTable()
-	families_print.field_names = list(family_table[0].keys())
-	for fam in family_table:
+	families_print.field_names = list(info['families'][0].keys())
+	for fam in info['families']:
 		families_print.add_row(list(fam.values()))
 	print(families_print)
