@@ -46,7 +46,7 @@ class dates_before_current:
 
 class test_dates_before_current(unittest.TestCase):
 	def make_test_file(self, file_name):
-		#to implement
+		#to implement, should be done with case based on file_name
 		return
 
 	def check_output(self, check_value):
@@ -59,36 +59,42 @@ class test_dates_before_current(unittest.TestCase):
 	#@patch.object(sys, 'argv', ['us01.py','test_birthday.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_indi_birthday(self):
+		self.make_test_file('test_birthday.ged')
 		check_value = 'ERROR: INDIVIDUAL: US01: @I1@: Birthday 10-30-2022 occurs in the future'
 		self.check_output(check_value)
 
 	#@patch.object(sys, 'argv', ['us01.py','test_birthday_exists.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_indi_birthday_exists(self):
+		self.make_test_file('test_birthday_exists.ged')
 		check_value = 'ERROR: INDIVIDUAL: US01: @I1@: Birthday does not exist'
 		self.check_output(check_value)
 
 	#@patch.object(sys, 'argv', ['us01.py','test_death.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_indi_death(self):
+		self.make_test_file('test_death.ged')
 		check_value = 'ERROR: INDIVIDUAL: US01: @I1@: Death 10-30-2022 occurs in the future'
 		self.check_output(check_value)
 
 	#@patch.object(sys, 'argv', ['us01.py','test_married.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_fam_married(self):
+		self.make_test_file('test_married.ged')
 		check_value = 'ERROR: FAMILY: US01: @F1@: Married 10-30-2022 occurs in the future'
 		self.check_output(check_value)
 
 	#@patch.object(sys, 'argv', ['us01.py','test_married_exists.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_fam_married_exists(self):
+		self.make_test_file('test_married_exists.ged')
 		check_value = 'ERROR: FAMILY: US01: @F8@: Married date does not exist'
 		self.check_output(check_value)
 
 	#@patch.object(sys, 'argv', ['us01.py','test_divorce.ged'])
 	@patch.object(sys, 'argv', ['us01.py','kurt_project01.ged'])
 	def test_fam_divorce(self):
+		self.make_test_file('test_divorce.ged')
 		check_value = 'ERROR: FAMILY: US01: @F1@: Divorce 10-30-2022 occurs in the future'
 		self.check_output(check_value)
 
