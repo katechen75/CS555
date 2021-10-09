@@ -25,5 +25,5 @@ for family in info['families']:
 				husband_death = individual['death']
 		if husband_death != None and wife_death != None:
 			if husband_death < d and wife_death < d:
-				print("ERROR: FAMILY: US01: " + family['id'] + ": Divorce " + d.strftime("%m-%d-%Y") + " occurs after death of both spouses")
+				print("ERROR: FAMILY: US06: " + family['id'] + ": Divorce " + d.strftime("%m-%d-%Y") + " occurs after death of both spouses")
 

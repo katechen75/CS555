@@ -128,18 +128,20 @@ def get_info(file_name):
 			obj = {"id": fam_id, "married": married, "divorced": divorced, "husband_id": husband_id, "husband_name": husband_name, "wife_id": wife_id, "wife_name": wife_name, "children": children}
 			family_table.append(obj)
 
-		print("Individuals")
-		individuals_print = PrettyTable()
-		individuals_print.field_names = list(individuals_table[0].keys())
-		for ind in individuals_table:
-			individuals_print.add_row(list(ind.values()))
-		print(individuals_print)
-
-		print("Families")
-		families_print = PrettyTable()
-		families_print.field_names = list(family_table[0].keys())
-		for fam in family_table:
-			families_print.add_row(list(fam.values()))
-		print(families_print)
-
 		return {"individuals": individuals_table, "families": family_table}
+
+def print_tables(file_name):
+	info = get_info(file_name)
+	print("Individuals")
+	individuals_print = PrettyTable()
+	individuals_print.field_names = list(individuals_table[0].keys())
+	for ind in individuals_table:
+		individuals_print.add_row(list(ind.values()))
+	print(individuals_print)
+
+	print("Families")
+	families_print = PrettyTable()
+	families_print.field_names = list(family_table[0].keys())
+	for fam in family_table:
+		families_print.add_row(list(fam.values()))
+	print(families_print)
