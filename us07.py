@@ -3,14 +3,35 @@
 
 from project03 import *
 import sys
+import unittest
 
 file_name = sys.argv[1]
 info = get_info(file_name)
 
-for ind in info['individuals']:
-    if ind['birthday'] != None and ind['death'] != None:
-        birth = ind['birthday']
-        death = ind['death']
-        aliveDays = (death - birth).days
-        if (aliveDays > (150*365)+36):
-            print("ERROR: INDIVIDUAL: US07: " + ind['id'] + " older than 150 years. " + " Birthday: " + birth.strftime("%m-%d-%Y") + "  Death: " + death.strftime("%m-%d-%Y"))
+def lessThan150():
+    for ind in info['individuals']:
+        if ind['birthday'] != None and ind['death'] != None:
+            birth = ind['birthday']
+            death = ind['death']
+            aliveDays = (death - birth).days
+            if (aliveDays > (150*365)+36):
+                print("ERROR: INDIVIDUAL: US07: " + ind['id'] + " older than 150 years. " + " Birthday: " + birth.strftime("%m-%d-%Y") + "  Death: " + death.strftime("%m-%d-%Y"))
+                return False
+            else:
+                return True
+
+
+class Testing(unittest.TestCase):
+    print('test 1: younger than 150 years - assertEqual')
+    def test_youngerThan150a(self):
+        self.assertTrue(lessThan150(), True)
+
+    print('test 2: younger than 150 years- assertFalse')
+    def test_youngerThan150b(self):
+        self.assertTrue(lessThan150(), False)
+
+
+  
+if __name__ == '__main__':
+
+    unittest.main(argv=[sys.argv[0]])
