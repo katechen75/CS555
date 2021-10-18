@@ -21,17 +21,3 @@ def lessThan150():
                 return True
 
 
-class Testing(unittest.TestCase):
-    print('test 1: younger than 150 years - assertEqual')
-    def test_youngerThan150a(self):
-        self.assertTrue(lessThan150(), True)
-
-    print('test 2: younger than 150 years- assertFalse')
-    def test_youngerThan150b(self):
-        self.assertTrue(lessThan150(), False)
-
-
-  
-if __name__ == '__main__':
-
-    unittest.main(argv=[sys.argv[0]])

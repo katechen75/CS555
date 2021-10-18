@@ -35,15 +35,5 @@ def birthBeforeMarriage():
                     if (hbirth > m) or (wbirth > m):
                         return print("ERROR: FAMILY: US02: " + family['id'] + ": Marriage " + m.strftime("%m-%d-%Y") + " occurs before birthdays of both spouses")
 
-print(formatMarriedDate('3 JAN 1957'))
+#print(formatMarriedDate('3 JAN 1957'))
 
-class Testing(unittest.TestCase):
-    print('test 1: birth before marriage - assertNotEqual')
-    def test_marriedFam(self):
-        self.assertNotEqual(birthBeforeMarriage(), 123)
-
-    print('test 2: birth before marriage - assertNotEqual')
-    def test_marriedFam1(self):
-        self.assertNotEqual(birthBeforeMarriage(), int('19570401'))
-if __name__ == '__main__':
-    unittest.main(argv=[sys.argv[0]])

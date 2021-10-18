@@ -36,18 +36,3 @@ def marriageAfter14():
                     return True
             
 
-
-class Testing(unittest.TestCase):
-    print('test 1: marriage after 14 - assertEqual')
-    def test_marriedFam(self):
-        self.assertTrue(marriageAfter14(), True)
-
-    print('test 1: marriage after 14 - assertFalse')
-    def test_marriedFam2(self):
-        self.assertTrue(marriageAfter14(), False)
-
-
-  
-if __name__ == '__main__':
-
-    unittest.main(argv=[sys.argv[0]])
