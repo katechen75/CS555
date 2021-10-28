@@ -12,26 +12,26 @@ from io import StringIO
 
 def parents_not_too_old():
 	file_name = sys.argv[1]
-    info = get_info(file_name)
-    ret = 0
+	info = get_info(file_name)
+	ret = 0
 	for family in info['families']:	
 		husband_birth = None
 		wife_birth = None
 		children_births = []
 		for individual in info['individuals']:
 			if individual["id"] == family['wife_id']:
-				wife_birth = individual['birth']
+				wife_birth = individual['birthday']
 			if individual["id"] == family['husband_id']:
-				husband_birth = individual['birth']
+				husband_birth = individual['birthday']
 			if individual["id"] in family['children']:
-				children_births.append({"id": individual["id"], "birth": individual["birth"]})
+				children_births.append({"id": individual["id"], "birth": individual["birthday"]})
 		for child in children_births:
 			if husband_birth != None:
 				if (child["birth"].year - husband_birth.year > 80) or (child["birth"].year - husband_birth.year == 80 and child["birth"].month > husband_birth.month) or (child["birth"].year - husband_birth.year == 80 and child["birth"].month == husband_birth.month and child["birth"].day > husband_birth.month):
 					ret += 1
-					print("ERROR: FAMILY: US12: " + child["id"] + ": Birthday " + child['birthday'].strftime("%m-%d-%Y") + " occurs more than 80 days after father")
+					print("ERROR: FAMILY: US12: " + child["id"] + ": Birthday " + child['birth'].strftime("%m-%d-%Y") + " occurs more than 80 days after father")
 			if wife_birth != None:
 				if (child["birth"].year - husband_birth.year > 60) or (child["birth"].year - husband_birth.year == 60 and child["birth"].month > husband_birth.month) or (child["birth"].year - husband_birth.year == 60 and child["birth"].month == husband_birth.month and child["birth"].day > husband_birth.month):
 					ret += 1
-					print("ERROR: FAMILY: US12: " + child["id"] + ": Birthday " + child['birthday'].strftime("%m-%d-%Y") + " occurs more than 60 days after mother")
+					print("ERROR: FAMILY: US12: " + child["id"] + ": Birthday " + child['birth'].strftime("%m-%d-%Y") + " occurs more than 60 days after mother")
 	return ret

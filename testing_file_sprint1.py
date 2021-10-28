@@ -114,7 +114,7 @@ class test_divorce_before_death(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertIn(check_value, capturedOutput.getvalue())
 
-    @patch.object(sys, 'argv', ['us01.py',test_file_name])
+    @patch.object(sys, 'argv', ['us06.py',test_file_name])
     def test_both_deaths_after_divorce(self):
         self.make_test_file()
         check_value = 'ERROR: FAMILY: US06: @F1@: Divorce 10-30-2020 occurs after death of both spouses'
