@@ -4,6 +4,8 @@ from us08 import *
 from us12 import *
 from us13 import *
 from us14 import *
+from us15 import *
+from us16 import *
 from us17 import *
 from us18 import *
 
@@ -35,6 +37,18 @@ class test_us14(unittest.TestCase):
 	@patch.object(sys, 'argv', ['us14.py','kurt_sprint2_testfile.ged'])
 	def test_multiple_sib_born(self):
 		self.assertEqual(multiple_sib_born(), 0)
+  
+## user Story 15
+class test_us15(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us15.py','kurt_sprint2_testfile.ged'])
+	def fewer_than_15_sib(self):
+		self.assertEqual(fewer_than_15_sib(), 1)
+  
+## user Story 16
+class test_us16(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us16.py','kurt_sprint2_testfile.ged'])
+	def male_last_name(self):
+		self.assertEqual(male_last_name(), 1)
 
 ## user Story 17
 class test_us17(unittest.TestCase):
