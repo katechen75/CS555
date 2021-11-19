@@ -12,6 +12,19 @@ from unittest.mock import patch
 from io import StringIO
 import sys
 
+
+## user story 22
+class test_us24(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us22.py', 'kurt_sprint3_testged.ged'])
+	def test_unique_ids(self):
+		self.assertEqual(unique_ids(), 0)
+
+## user story 23
+class test_us24(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us23.py', 'kurt_sprint3_testged.ged'])
+	def test_unique_name_and_birthday(self):
+		self.assertEqual(unique_name_and_birthday(), 0)
+
 ## user story 24
 class test_us24(unittest.TestCase):
 	@patch.object(sys, 'argv', ['us24.py', 'kurt_sprint3_testged.ged'])
