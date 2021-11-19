@@ -3,7 +3,9 @@
 from us24 import *
 from us25 import *
 from us27 import *
+from us28 import *
 from us29 import *
+from us31 import *
 
 import unittest
 from unittest.mock import patch
@@ -27,11 +29,23 @@ class test_us27(unittest.TestCase):
 	def test_include_individual_ages(self):
 		self.assertEqual(include_individual_ages(), 37)
 
+## user Story 28
+class test_us28(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us28.py','kurt_project01.ged'])
+	def test_order_of_siblings(self):
+		self.assertEqual(order_sibs(), 0)
+
 ## user Story 29
 class test_us29(unittest.TestCase):
 	@patch.object(sys, 'argv', ['us29.py','kurt_project01.ged'])
 	def test_list_deceased(self):
 		self.assertEqual(list_deceased(), 19)
+
+## user Story 31
+class test_us31(unittest.TestCase):
+	@patch.object(sys, 'argv', ['us31.py','kurt_project01.ged'])
+	def test_living_singles(self):
+		self.assertEqual(singles(), 0)
 
 if __name__ == '__main__':
 	unittest.main(argv=[sys.argv[0]])
