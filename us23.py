@@ -8,7 +8,7 @@ from unittest.mock import patch
 from io import StringIO
 
 
-def unique_ids():
+def unique_name_and_birthday():
 	file_name = sys.argv[1]
 	info = get_info(file_name)
 	ret = 0
