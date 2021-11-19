@@ -1,5 +1,4 @@
-## all individuals id should be different as well as birthdays
-## all the family id shoud be unique
+## us 23: all individuals shoulr have a unique name and birthday
 from project03 import *
 import sys
 import datetime
