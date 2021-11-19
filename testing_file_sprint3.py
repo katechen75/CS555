@@ -1,5 +1,6 @@
 ## testing file sprint 3
-
+from us22 import *
+from us23 import *
 from us24 import *
 from us25 import *
 from us27 import *
@@ -14,16 +15,16 @@ import sys
 
 
 ## user story 22
-class test_us24(unittest.TestCase):
+class test_us22(unittest.TestCase):
 	@patch.object(sys, 'argv', ['us22.py', 'kurt_sprint3_testged.ged'])
 	def test_unique_ids(self):
-		self.assertEqual(unique_ids(), 0)
+		self.assertEqual(unique_ids(), 1)
 
 ## user story 23
-class test_us24(unittest.TestCase):
+class test_us23(unittest.TestCase):
 	@patch.object(sys, 'argv', ['us23.py', 'kurt_sprint3_testged.ged'])
 	def test_unique_name_and_birthday(self):
-		self.assertEqual(unique_name_and_birthday(), 0)
+		self.assertEqual(unique_name_and_birthday(), 1)
 
 ## user story 24
 class test_us24(unittest.TestCase):

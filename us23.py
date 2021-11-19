@@ -11,12 +11,11 @@ def unique_name_and_birthday():
 	file_name = sys.argv[1]
 	info = get_info(file_name)
 	ret = 0
-	for ind1 in range(0, len(info['individuals'])):
-		for ind2 in range(1, len(info['individuals'])):
-            if (ind1['id'] == ind2['id']) & (ind1['birthday'] == ind2['birthday']) & 
-                (ind1['name'] == ind2['name']):
+	for ind1 in info['individuals']:
+		for ind2 in info['individuals']:
+			if (ind1['id'] == ind2['id']) and (ind1['birthday'] == ind2['birthday']) and (ind1['name'] == ind2['name']):
 				print("ERROR: FAMILY: US28: " + ind1['id'] + ", " + ind2['id'] + " have the same name and birthday")
-                ret =1
-    return ret
+				ret =1
+	return ret
 
 
