@@ -70,6 +70,12 @@ def get_info(file_name):
 				birth_day = int(birth_dmy[0])
 				birth_month = month_to_num[birth_dmy[1]]
 				birth_year = int(birth_dmy[2])
+				#b=datetime
+				try:
+					datetime.datetime(birth_year, birth_month, birth_day)
+				except ValueError: 
+					print("Value Error: US42 illegitimate Date")
+					return 0
 				b = datetime.datetime(birth_year, birth_month, birth_day)
 				birthday = b
 			if death != None:
@@ -130,6 +136,7 @@ def get_info(file_name):
 
 		return {"individuals": individuals_table, "families": family_table}
 
+
 def print_tables(file_name):
 	info = get_info(file_name)
 	print("Individuals")
@@ -145,3 +152,6 @@ def print_tables(file_name):
 	for fam in info['families']:
 		families_print.add_row(list(fam.values()))
 	print(families_print)
+
+
+print_tables("kurt_project01.ged")
